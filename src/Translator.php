@@ -1,10 +1,11 @@
 <?php namespace Hpolthof\Translation;;
 
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Translation\LoaderInterface;
-use Symfony\Component\Translation\TranslatorInterface;
+use Illuminate\Contracts\Translation\Loader as LoaderInterface;
+use Illuminate\Contracts\Translation\Translator as TranslatorContract;
 
-class Translator extends \Illuminate\Translation\Translator implements TranslatorInterface {
+
+class Translator extends \Illuminate\Translation\Translator implements TranslatorContract {
 
 	protected $app = null;
 

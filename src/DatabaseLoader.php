@@ -1,7 +1,7 @@
 <?php namespace Hpolthof\Translation;
 
 use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Translation\LoaderInterface;
+use Illuminate\Contracts\Translation\Loader as LoaderInterface;
 
 class DatabaseLoader implements LoaderInterface {
 
@@ -84,4 +84,19 @@ class DatabaseLoader implements LoaderInterface {
             }
         }
     }
+
+    /**
+     * Add a new JSON path to the loader.
+     *
+     * @param  string  $path
+     * @return void
+     */
+    public function addJsonPath($path) {}
+
+    /**
+     * Get an array of all the registered namespaces.
+     *
+     * @return array
+     */
+    public function namespaces() {}
 }
