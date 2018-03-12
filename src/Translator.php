@@ -61,6 +61,14 @@ class Translator extends \Illuminate\Translation\Translator implements Translato
 		// from the application's language files. Otherwise we can return the line.
 		if ( ! isset($line)) return $key;
 
+		// Below snippet is for showing translation key
+		// if URL have "translation-keys=true||show" query string
+		$showKeys = request()->input('translation-keys') ?: false;
+
+		if ($showKeys && ($showKeys == 'show' || $showKeys == 'true')) {
+		    $line = $key;
+		}
+
 		return $line;
 	}
 
